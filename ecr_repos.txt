@@ -1,0 +1,5 @@
+215726089536.dkr.ecr.us-east-1.amazonaws.com/exif-lambda
+
+215726089536.dkr.ecr.us-east-1.amazonaws.com/resize-lambda
+
+215726089536.dkr.ecr.us-east-1.amazonaws.com/greyscale-lambda
