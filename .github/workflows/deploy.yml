@@ -43,7 +43,7 @@ jobs:
           ######
           #
           #  TODO: implement build and push to ECR
-          - name: Build, tag, and push greyscale image to Amazon ECR
+          # - name: Build, tag, and push greyscale image to Amazon ECR
           env:
             ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
             ECR_REPOSITORY: resize-lambda
@@ -127,7 +127,7 @@ jobs:
           ######
           #
           #  TODO: implement build and push to ECR
-          - name: Build, tag, and push greyscale image to Amazon ECR
+          # - name: Build, tag, and push greyscale image to Amazon ECR
           env:
             ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
             ECR_REPOSITORY: greyscale-lambda
@@ -212,7 +212,7 @@ jobs:
           ######
           #
           #  TODO: implement build and push to ECR
-          - name: Build, tag, and push greyscale image to Amazon ECR
+          # - name: Build, tag, and push greyscale image to Amazon ECR
           env:
             ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
             ECR_REPOSITORY: exif-lambda
