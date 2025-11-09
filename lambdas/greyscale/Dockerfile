@@ -7,16 +7,28 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 #
 # TODO: implement the rest of the image
 
-WORKDIR ${LAMBDA_TASK_ROOT}
+FROM public.ecr.aws/lambda/python:3.13
 
+# install uv
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
-COPY pyproject.toml ./
+# set working directory
+WORKDIR ${LAMBDA_TASK_ROOT}
 
-RUN uv pip install --system -e .
+# copy project requirements
+COPY pyproject.toml ${LAMBDA_TASK_ROOT}/
 
-COPY handler.py ./
+# sync project and install dependencies
+RUN uv sync --system -e .
 
-CMD ["handler.greyscale_handler"]
+# copy Lambda handler code
+COPY handler.py ${LAMBDA_TASK_ROOT}/
+
+# set PYTHONPATH to include virtual environment site-packages
+ENV PYTHONPATH="${LAMBDA_TASK_ROOT}/.venv/lib/python3.13/site-packages"
+
+# set the CMD to your handler function
+CMD ["handler.resize_handler"]
+
 #
 ############
