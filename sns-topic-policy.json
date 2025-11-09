@@ -13,7 +13,7 @@
           "aws:SourceAccount": "215726089536"
         },
         "ArnLike": {
-          "aws:SourceArn": "arn:aws:s3:::aec164assignment3"
+          "aws:SourceArn": "arn:aws:s3:::aec164-assignment3"
         }
       }
     }
