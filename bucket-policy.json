@@ -10,8 +10,8 @@
         "s3:List*"
       ],
       "Resource": [
-        "arn:aws:s3:::<your-pitt-username>-assignment3",
-        "arn:aws:s3:::<your-pitt-username>-assignment3/*"
+        "arn:aws:s3:::aec164-assignment3",
+        "arn:aws:s3:::aec164-assignment3/*"
       ]
     }
   ]
